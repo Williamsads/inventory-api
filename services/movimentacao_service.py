@@ -20,7 +20,7 @@ def registrar_movimentacao(db: Session, estoque_id: int, tipo: str, quantidade: 
     db.commit()
     db.refresh(estoque)
     
-    return movimentacao_repo.create_movimentacao(db, estoque_id, tipo, quantidade)
+    return movimentacao_repo.registrar_movimentacao(db, estoque_id, tipo, quantidade)
 
 def listar_movimentacoes(db: Session, estoque_id: int):
-    return movimentacao_repo.get_movimentacoes(db, estoque_id)
+    return movimentacao_repo.listar_movimentacoes(db, estoque_id)
